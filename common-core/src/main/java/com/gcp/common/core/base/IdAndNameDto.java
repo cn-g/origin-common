@@ -1,0 +1,30 @@
+package com.gcp.common.core.base;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+import javax.validation.constraints.NotBlank;
+
+/**
+ * @author Admin
+ */
+@Data
+@ApiModel("id和name")
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@NoArgsConstructor
+public class IdAndNameDto {
+
+    @ApiModelProperty(value = "id")
+    @NotBlank(message = "id不能为空")
+    private String id;
+
+    @ApiModelProperty(value = "name")
+    @NotBlank(message = "name不能为空")
+    private String name;
+
+}
